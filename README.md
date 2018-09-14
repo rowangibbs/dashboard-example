@@ -1,1 +1,1 @@
-loading-shimmer
+simple shimmer
