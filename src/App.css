@@ -1,42 +1,57 @@
-.card {
-  width: 640px;
-  margin: 20px auto;
-}
-.card .card-header {
-  min-height: 3rem;
-}
-.card .card-block {
-  background: #414141;
-  min-height: 10rem;
-}
-.card.loading .card-header {
-  background-image: linear-gradient(90deg, cadetblue 0%, cadetblue 50%, #afcfd0 75%, cadetblue 100%);
-  background-size: 200% 100%;
-  -webkit-animation: 2s loading-bg-header linear infinite;
-  animation: 2s loading-bg-header linear infinite;
-}
-.card.loading .card-block {
-  background-image: linear-gradient(90deg, #7fb1b3 0%, #7fb1b3 50%, #bfd8d9 75%, #7fb1b3 100%);
-  background-size: 200% 100%;
-  -webkit-animation: 2s loading-bg-header linear infinite;
-  animation: 2s loading-bg-header linear infinite;
+#root {
+  width: 100%;
+  height: 100%;
 }
 
-@-webkit-keyframes loading-bg-header {
-  from {
-    background-position-x: 0%;
-  }
-  to {
-    background-position-x: -200%;
-  }
+#dashboard {
+ background-color:#fff;
+ width: 100%;
+ height: 900px;
+ padding: 20px;
 }
 
-@keyframes loading-bg-header {
-  from {
-    background-position-x: 0%;
-  }
-  to {
-    background-position-x: -200%;
-  }
+#header-flex-parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  align-content: center;
 }
 
+.header-flex-element {
+  width: 300px;
+  height: 120px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.element-flex-body {
+  width: 100%;
+  height: 90px;
+  background-color: transparent;
+}
+
+.element-flex-footer {
+  width: 100%;
+  height: 30px;
+  background-color:#fff;
+}
+
+.card-info {
+
+}
+
+.card-teal {
+  background-color: #393d4e;
+}
+.card-avocado {
+  background-color:  #393d4e
+}
+.card-tangerine {
+  background-color: #393d4e
+}
+.card-orchid {
+  background-color: #393d4e
+}

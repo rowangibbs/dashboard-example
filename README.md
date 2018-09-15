@@ -1,1 +1,1 @@
-simple shimmer
+simple Dashboard

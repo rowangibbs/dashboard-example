@@ -4,10 +4,25 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div class="card loading">
-          <div class="card-header"></div>
-          <div class="card-block">hello</div>
+      <div id="dashboard">
+        <div id="header-flex-parent">
+          <div className="header-flex-element card-teal">
+           <div className="element-flex-body"></div>
+           <div className="element-flex-footer"></div>
+          </div>
+          <div className="header-flex-element card-avocado">
+          <div className="element-flex-body"></div>
+           <div className="element-flex-footer"></div>
+          
+          </div>
+          <div className="header-flex-element card-tangerine">
+          <div className="element-flex-body"></div>
+           <div className="element-flex-footer"></div>
+          </div>
+          <div className="header-flex-element card-orchid">
+                     <div className="element-flex-body"></div>
+           <div className="element-flex-footer"></div>
+          </div>
         </div>
       </div>
     );
