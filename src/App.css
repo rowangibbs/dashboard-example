@@ -21,7 +21,7 @@
 
 .header-flex-element {
   width: 300px;
-  height: 120px;
+  height: 140px;
   border: 2px solid transparent;
   border-radius: 3px;
   overflow: hidden;
@@ -29,18 +29,31 @@
 
 .element-flex-body {
   width: 100%;
-  height: 90px;
+  height: 100px;
   background-color: transparent;
 }
 
 .element-flex-footer {
   width: 100%;
-  height: 30px;
+  height: 40px;
   background-color:#fff;
 }
 
-.card-info {
+.body-text {
+  color: #0094D9;
+  display :inline-block;
+  font-size: 72px;
+  font-family: 'Open Sans', sans-serif;
+  width: 64px;
+  height: 64px;
+  margin: 18px;
 
+}
+
+.footer-text {
+  color: #393d4e;
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .card-teal {
@@ -54,4 +67,12 @@
 }
 .card-orchid {
   background-color: #393d4e
+}
+
+.online-image {
+  width: 64px;
+  height: 64px;
+  margin: 18px;
+  background-image: url('./onlineWhite.svg'); 
+  background-size: cover;
 }
