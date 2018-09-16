@@ -80,3 +80,26 @@
   height: 70%;
   margin-left: 10px;
 }
+
+.example-content {
+  display: block;
+  width: 100%;
+  height: 600px;
+  margin: 50px auto;
+}
+
+#content-blue {
+  background-color: blue;
+}
+
+#content-orange {
+  background-color: orange;
+}
+
+#content-red {
+  background-color: red;
+}
+
+#content-green {
+  background-color: green;
+}
