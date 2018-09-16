@@ -8,8 +8,8 @@ class App extends Component {
         <div id="header-flex-parent">
           <div className="header-flex-element card-teal">
            <div className="element-flex-body">
-            <svg className="online-image"></svg>
-            <div className="body-text">77</div>
+            <div className="online-image"></div>
+            <div className="body-text">ONLINE!</div>
            </div>
            <div className="element-flex-footer">
             <span className="footer-text">Connection Status</span>

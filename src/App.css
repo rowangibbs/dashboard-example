@@ -31,6 +31,11 @@
   width: 100%;
   height: 100px;
   background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .element-flex-footer {
@@ -41,13 +46,10 @@
 
 .body-text {
   color: #0094D9;
-  display :inline-block;
-  font-size: 72px;
+  font-size: 36px;
   font-family: 'Open Sans', sans-serif;
-  width: 64px;
-  height: 64px;
-  margin: 18px;
-
+  flex: 4;
+  text-align: center;
 }
 
 .footer-text {
@@ -70,9 +72,11 @@
 }
 
 .online-image {
-  width: 64px;
-  height: 64px;
-  margin: 18px;
   background-image: url('./onlineWhite.svg'); 
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex: 2;
+  width: 70%;
+  height: 70%;
+  margin-left: 10px;
 }
