@@ -18,6 +18,18 @@ const data = [
   {x: 9, y: 0}
 ];
 
+const timestamp = new Date('September 9 2017').getTime();
+
+const timeStamps = [
+  new Date('September 9 2017').getTime(),
+  new Date('September 13 2017').getTime(),
+  new Date('September 20 2017').getTime(),
+  new Date('September 29 2017').getTime(),
+  new Date('October 9 2017').getTime(),
+
+]
+const MSEC_DAILY = 86400000;
+
 class App extends Component {
   autoScroll = (color) => {
     let yVal;
@@ -76,9 +88,22 @@ class App extends Component {
         </div>
 
         <div id="content-blue" className="example-content">
-        <XYPlot height={300} width={300}>
-          <LineSeries data={data} />
-        </XYPlot>
+        <XYPlot
+        xType="time"
+        width={300}
+        height={300}>
+        <HorizontalGridLines />
+        <VerticalGridLines />
+        <XAxis title="X Axis" />
+        <YAxis title="Y Axis" />
+        <LineSeries
+          data={[
+            {x: timeStamps[0], y: 3},
+            {x: timeStamps[1], y: 5},
+            {x: timeStamps[2], y: 15},
+            {x: timeStamps[3], y: 12}
+          ]}/>
+      </XYPlot>
         </div>
         <div id="content-orange" className="example-content">
         <XYPlot height={300} width= {300}>
