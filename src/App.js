@@ -1,5 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
+import { LineChart, Line } from 'recharts';
+import '../node_modules/react-vis/dist/style.css';
+import {XYPlot, LineSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis} from 'react-vis';
+
+
+const data = [
+  {x: 0, y: 8},
+  {x: 1, y: 5},
+  {x: 2, y: 4},
+  {x: 3, y: 9},
+  {x: 4, y: 1},
+  {x: 5, y: 7},
+  {x: 6, y: 6},
+  {x: 7, y: 3},
+  {x: 8, y: 2},
+  {x: 9, y: 0}
+];
 
 class App extends Component {
   autoScroll = (color) => {
@@ -8,13 +25,13 @@ class App extends Component {
       case 'blue':
         window.scroll( 0, 200 );
         break;
-        case 'orange':
+      case 'orange':
         window.scroll( 0, 850 );
         break;
-        case 'red':
+      case 'red':
         window.scroll( 0, 1500 );
         break;
-        case 'green':
+      case 'green':
         window.scroll( 0, 2200 );
         break;
       default:
@@ -58,8 +75,20 @@ class App extends Component {
           </div>
         </div>
 
-        <div id="content-blue" className="example-content" />
-        <div id="content-orange" className="example-content" />
+        <div id="content-blue" className="example-content">
+        <XYPlot height={300} width={300}>
+          <LineSeries data={data} />
+        </XYPlot>
+        </div>
+        <div id="content-orange" className="example-content">
+        <XYPlot height={300} width= {300}>
+          <LineSeries data={data} />
+          <VerticalGridLines />
+          <HorizontalGridLines />
+          <XAxis />
+          <YAxis />
+        </XYPlot>
+        </div>
         <div id="content-red" className="example-content" />
         <div id="content-green" className="example-content" />
 

@@ -89,11 +89,13 @@
 }
 
 #content-blue {
-  background-color: blue;
+  background-color: transparent;
+  border: lightblue 2px solid;
 }
 
 #content-orange {
-  background-color: orange;
+  background-color: transparent;
+  border: lightcoral 2px solid;
 }
 
 #content-red {
