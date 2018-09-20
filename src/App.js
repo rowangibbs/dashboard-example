@@ -3,7 +3,7 @@ import './App.css';
 import { LineChart, Line } from 'recharts';
 import '../node_modules/react-vis/dist/style.css';
 import {XYPlot, LineSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis,  MarkSeries,
-  Hint} from 'react-vis';
+  Hint, LineMarkSeries} from 'react-vis';
 
 
 const data = [
@@ -25,8 +25,8 @@ const timeStamps = [
   new Date('September 9 2017').getTime(),
   new Date('September 13 2017').getTime(),
   new Date('September 20 2017').getTime(),
-  new Date('September 29 2017').getTime(),
-  new Date('October 9 2017').getTime(),
+  new Date('September 29 2018').getTime(),
+  new Date('October 9 2018').getTime(),
 
 ]
 const MSEC_DAILY = 86400000;
@@ -139,25 +139,24 @@ class App extends Component {
         </div>
         <div id="content-orange" className="example-content">
         <XYPlot height={300} width= {300}>
-          <LineSeries data={data} />
-          <VerticalGridLines />
-          <HorizontalGridLines />
-          <XAxis />
-          <YAxis />
-        </XYPlot>
-        </div>
-        <div id="content-red" className="example-content">
-        <XYPlot width={300} height={300}>
-        <VerticalGridLines />
         <HorizontalGridLines />
-        <XAxis />
-        <YAxis />
-        <MarkSeries
-          onValueMouseOver={this._rememberValue}
+        <VerticalGridLines />
+        <XAxis title="X Axis" />
+        <YAxis title="Y Axis" />
+        <LineMarkSeries
+  data={[
+    {x: timeStamps[0], y: 3},
+    {x: timeStamps[1], y: 5},
+    {x: timeStamps[2], y: 15},
+    {x: timeStamps[3], y: 12}
+  ]}
+  lineStyle={{stroke:"red"}}
+  markStyle={{stroke:"blue"}}
+  onValueMouseOver={this._rememberValue}
           onValueMouseOut={this._forgetValue}
-          data={data}
-        />
-        {this.state.value ? <Hint value={this.state.value} /> : null}
+          
+/>
+{this.state.value ? <Hint value={this.state.value} /> : null}
       </XYPlot>
         
         
