@@ -99,7 +99,8 @@
 }
 
 #content-red {
-  background-color: red;
+  background-color: transparent;
+  border: red 2px solid;
 }
 
 #content-green {

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { LineChart, Line } from 'recharts';
 import '../node_modules/react-vis/dist/style.css';
-import {XYPlot, LineSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis} from 'react-vis';
+import {XYPlot, LineSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis,  MarkSeries,
+  Hint} from 'react-vis';
 
 
 const data = [
@@ -31,6 +32,25 @@ const timeStamps = [
 const MSEC_DAILY = 86400000;
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null
+    };
+    this._rememberValue = this._rememberValue.bind(this);
+    this._forgetValue = this._forgetValue.bind(this);
+  }
+
+  _rememberValue(value) {
+    this.setState({value});
+  }
+
+  _forgetValue() {
+    this.setState({
+      value: null
+    });
+  }
+
   autoScroll = (color) => {
     let yVal;
     switch (color) {
@@ -103,6 +123,18 @@ class App extends Component {
             {x: timeStamps[2], y: 15},
             {x: timeStamps[3], y: 12}
           ]}/>
+           <MarkSeries
+          onValueMouseOver={this._rememberValue}
+          onValueMouseOut={this._forgetValue}
+          data={[
+            {x: timeStamps[0], y: 3},
+            {x: timeStamps[1], y: 5},
+            {x: timeStamps[2], y: 15},
+            {x: timeStamps[3], y: 12}
+          ]}
+        />
+
+          {this.state.value ? <Hint value={this.state.value} /> : null}
       </XYPlot>
         </div>
         <div id="content-orange" className="example-content">
@@ -114,7 +146,22 @@ class App extends Component {
           <YAxis />
         </XYPlot>
         </div>
-        <div id="content-red" className="example-content" />
+        <div id="content-red" className="example-content">
+        <XYPlot width={300} height={300}>
+        <VerticalGridLines />
+        <HorizontalGridLines />
+        <XAxis />
+        <YAxis />
+        <MarkSeries
+          onValueMouseOver={this._rememberValue}
+          onValueMouseOut={this._forgetValue}
+          data={data}
+        />
+        {this.state.value ? <Hint value={this.state.value} /> : null}
+      </XYPlot>
+        
+        
+        </div>
         <div id="content-green" className="example-content" />
 
       </div>
